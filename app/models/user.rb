@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  attr_accessor :password_digest
   has_secure_password
   has_many :posts
 
-  validates :email, uniqueness: { case_sensitive: false }
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, email: true
+  validates :password, confirmation: true
 end

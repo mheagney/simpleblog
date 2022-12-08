@@ -1,0 +1,18 @@
+<%= turbo_frame_tag "login_form" do %>
+  <%= form_with model: @user, url: sessions_path, method: :post, class: "space-y-6" do |f| %>
+    <%= render "shared/form_errors", object: f.object %>
+    <div>
+      <div class="mt-1">
+        <%= f.label "Email Address", class: "block text-sm font-medium text-gray-700" %>
+        <%= f.text_field :email, autofocus: true, autocomplete: "email", class: "block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm", required: true %>
+      </div>
+    </div>
+    <div>
+      <%= f.label "Password", class: "block text-sm font-medium text-gray-700" %>
+      <%= f.password_field :password, class: "block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" %>
+    </div>
+    <div>
+      <%= f.submit "Login", class:"flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
+    </div>
+  <% end %>
+<% end %>

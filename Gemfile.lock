@@ -87,9 +87,13 @@ GEM
     debug (1.7.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    email_validator (2.2.4)
+      activemodel
     erubi (1.11.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    heroicon (1.0.0)
+      rails (>= 5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -215,6 +219,8 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  email_validator (~> 2.2, >= 2.2.4)
+  heroicon
   importmap-rails
   jbuilder
   puma (~> 5.0)
@@ -234,4 +240,4 @@ RUBY VERSION
    ruby 3.1.2p20
 
 BUNDLED WITH
-   2.3.19
+   2.3.20

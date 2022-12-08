@@ -1,0 +1,9 @@
+<% flash.each do |key, value| %>
+  <div data-controller="flash" class="flex items-center <%= css_class_for_flash(key)  %> p-4 mt-10 rounded-md fixed top-5 right-5">
+    <%= value %>
+    <button type="button" data-action="flash#dismiss">
+      <%= heroicon "x-mark", options: { class: "ml-4" } %>
+    </button>
+  </div>
+  <% flash.discard %>
+<% end %>

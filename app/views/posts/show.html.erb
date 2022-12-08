@@ -1,0 +1,22 @@
+<div class="flex justify-between">
+  <h3 class="text-lg text-gray-900">Post Details</h3>
+  <% if current_user && current_user.posts.include?(@post)%>
+    <div class="flex">
+      <%= link_to "Edit", edit_post_path(@post), class: "inline-flex items-center rounded-md border border-gray-300 px-4 py-2 text-base font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2" %>
+      <%= button_to "Delete", post_path(@post), method: :delete, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "mx-2 inline-flex items-center rounded-md border bg-red-600 border-red-300 px-4 py-2 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2" %>
+    </div>
+  <% end %>
+</div>
+<div>
+  <dl class="divide-y divide-gray-200">
+    <div>
+      <h3 class="text-lg font-medium leading-6 text-gray-900"><%= @post.title %></h3>
+      <p class="font-light text-sm">By: <%= @post.user.email %></p>
+      <p class="font-light text-sm">Created: <%= @post.created_at %></p>
+      <p class="font-light text-sm">Last Updated: <%= @post.updated_at %></p>
+    </div>
+    <div>
+      <p class="mt-2 max-w-2xl text-gray-800"><%= @post.body %></p>
+    </div>
+  </dl>
+</div>
